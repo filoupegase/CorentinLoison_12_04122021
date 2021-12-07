@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { themeColor } from '../../utils/style/colorsStyle';
-import Icon from '../../images/icon.svg';
+import Icon from '../../images/iconSportSee.svg';
 
 
 const Header = function () {
