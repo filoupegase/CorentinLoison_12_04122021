@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import DashBoard from './pages/DashBoard';
 import reportWebVitals from './reportWebVitals';
 import { GlobalStyle } from './utils/style/GlobalStyle';
 
@@ -8,7 +8,7 @@ import { GlobalStyle } from './utils/style/GlobalStyle';
 ReactDOM.render(
     <React.StrictMode>
       <GlobalStyle />
-      <App />
+      <DashBoard />
     </React.StrictMode>,
     document.getElementById('root')
 );
