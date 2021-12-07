@@ -7,11 +7,9 @@ import Icon from '../../images/iconSportSee.svg';
 const Header = function () {
   return (
       <HeaderContainer data-testid="header">
-
         <LogoLink href="/">
           <img src={ Icon } alt="SportSee" />
         </LogoLink>
-
         <nav>
           <LinksList>
             <li>
@@ -35,7 +33,7 @@ const Header = function () {
 const HeaderContainer = styled.header`
   display: grid;
   grid-template-columns: 16rem 1fr;
-  color: ${themeColor.neutral100};
+  color: ${ themeColor.neutral100 };
   background: ${ themeColor.neutral900 };
 `;
 

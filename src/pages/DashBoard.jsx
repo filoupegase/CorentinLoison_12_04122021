@@ -1,5 +1,6 @@
 import Header from '../components/Header';
 import styled from 'styled-components';
+import NavAside from '../components/NavAside';
 
 
 function DashBoard() {
@@ -7,7 +8,7 @@ function DashBoard() {
       <>
         <Header />
         <DashboardContainer>
-
+          <NavAside />
         </DashboardContainer>
       </>
   );
