@@ -3,34 +3,14 @@ import { Pie, PieChart, ResponsiveContainer } from 'recharts';
 const data01 = [
   {
     'name': 'Group A',
-    'value': 400
-  },
-  {
-    'name': 'Group B',
-    'value': 300
-  },
-  {
-    'name': 'Group C',
-    'value': 300
-  },
-  {
-    'name': 'Group D',
-    'value': 200
-  },
-  {
-    'name': 'Group E',
-    'value': 278
-  },
-  {
-    'name': 'Group F',
-    'value': 189
+    'value': 1
   }
 ];
 
-const PieChartCom = function () {
+const PieChartObjectif = function () {
   return (
       <>
-        <ResponsiveContainer width="100%" height="100%">
+        <ResponsiveContainer width="10px" height="10px">
           <PieChart width={ 160 } height={ 160 }>
             <Pie data={ data01 }
                  dataKey="value"
@@ -48,4 +28,4 @@ const PieChartCom = function () {
   );
 };
 
-export default PieChartCom;
+export default PieChartObjectif;
