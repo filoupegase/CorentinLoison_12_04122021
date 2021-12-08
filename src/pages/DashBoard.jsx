@@ -9,7 +9,7 @@ function DashBoard() {
   const { userId } = useParams();
 
   const { data } = useSportSeeData('firstName', `user/${ userId }`);
-  console.log('this firstname : ', data);
+  const userName = data;
 
   return (
       <>
@@ -19,12 +19,11 @@ function DashBoard() {
 
           <SectionContent>
             <MainTitle>
-              Bonjour <SpanUserName>{ '{ UserName }' }</SpanUserName>
+              Bonjour <SpanUserName>{ userName.toString() }</SpanUserName>
             </MainTitle>
             <MessageUser>
               <span>Félicitation ! Vous avez explosé vos objectifs hier 👏</span>
             </MessageUser>
-
 
           </SectionContent>
         </DashboardContainer>

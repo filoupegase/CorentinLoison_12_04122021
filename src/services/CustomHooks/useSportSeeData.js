@@ -14,7 +14,7 @@ const DEFAULT_URL = 'http://localhost:8000';
  */
 export function useSportSeeData(service, userId) {
   const [data, setData] = useState({});
-  console.log('service', userId)
+  console.log('service', userId);
   const endpoint = endPointService(service, userId);
 
   useEffect(() => {
@@ -32,10 +32,9 @@ export function useSportSeeData(service, userId) {
 
         if (response.ok) {
           const data = await response.json();
-
+          console.log(data)
           const extractorData = extractDataService(data, service);
           setData(extractorData);
-          console.log('data +++', extractorData);
         }
       } catch (error) {
         console.error(`An error occured while fetching : ${ error }`);

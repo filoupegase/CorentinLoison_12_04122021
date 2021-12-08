@@ -5,13 +5,12 @@ import DashBoard from './pages/DashBoard';
 import reportWebVitals from './reportWebVitals';
 import { GlobalStyle } from './utils/style/GlobalStyle';
 
-
 ReactDOM.render(
     <React.StrictMode>
       <GlobalStyle />
       <Router>
         <Routes>
-          <Route exact path="/" element={ <Navigate to="/dashboard/18" /> } />
+          <Route exact path="/" element={ <Navigate to="/dashboard/12" /> } />
           <Route path="/dashboard/:userId" element={ <DashBoard /> } />
         </Routes>
       </Router>
