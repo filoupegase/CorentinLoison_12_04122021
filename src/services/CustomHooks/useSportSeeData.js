@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { endPointService } from './endPointService';
+import { extractDataService } from './extractDataService';
 
 const DEFAULT_URL = 'http://localhost:8000';
 
@@ -13,15 +14,14 @@ const DEFAULT_URL = 'http://localhost:8000';
  */
 export function useSportSeeData(service, userId) {
   const [data, setData] = useState({});
-
+  console.log('service', userId)
   const endpoint = endPointService(service, userId);
 
   useEffect(() => {
 
     async function fetchData() {
       try {
-        const url = `${ DEFAULT_URL }/${ endpoint }`;
-        console.log('endpoint = ', endpoint);
+        const url = `${ DEFAULT_URL }/user/18`;
 
         const response = await fetch(url, {
           headers: {
@@ -33,8 +33,9 @@ export function useSportSeeData(service, userId) {
         if (response.ok) {
           const data = await response.json();
 
-          setData(data);
-          console.log('data +++', data);
+          const extractorData = extractDataService(data, service);
+          setData(extractorData);
+          console.log('data +++', extractorData);
         }
       } catch (error) {
         console.error(`An error occured while fetching : ${ error }`);
@@ -43,6 +44,7 @@ export function useSportSeeData(service, userId) {
     }
 
     fetchData();
-  }, [service, endpoint]);
+  }, [service, userId, endpoint]);
+
   return { data };
 }
