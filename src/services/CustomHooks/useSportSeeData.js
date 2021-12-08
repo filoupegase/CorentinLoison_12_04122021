@@ -14,15 +14,14 @@ const DEFAULT_URL = 'http://localhost:8000';
  */
 export function useSportSeeData(service, userId) {
   const [data, setData] = useState({});
-  console.log('service', userId);
   const endpoint = endPointService(service, userId);
 
   useEffect(() => {
 
     async function fetchData() {
       try {
-        const url = `${ DEFAULT_URL }/user/18`;
-
+        const url = `${ DEFAULT_URL }/${ endpoint }`;
+        console.log(url);
         const response = await fetch(url, {
           headers: {
             'Content-Type': 'application/json',
@@ -32,7 +31,7 @@ export function useSportSeeData(service, userId) {
 
         if (response.ok) {
           const data = await response.json();
-          console.log(data)
+          console.log(data);
           const extractorData = extractDataService(data, service);
           setData(extractorData);
         }

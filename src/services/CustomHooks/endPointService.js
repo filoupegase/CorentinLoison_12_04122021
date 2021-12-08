@@ -7,7 +7,7 @@ export function endPointService(service, userId) {
   const ACTIVITIES_URL = `user/${ userId }/performance`;
   const AVERAGE_SESSIONS_URL = `user/${ userId }/average-sessions`;
   const DAILY_ACTIVITY_URL = `user/${ userId }/activity`;
-  const USER_URL = `user/${ userId }`;
+  const USER_URL = `${ userId }`;
 
   switch (service) {
     case 'activities':
