@@ -1,12 +1,15 @@
+import { useParams } from 'react-router';
 import Header from '../components/Header';
 import styled from 'styled-components';
 import { themeColor } from '../utils/style/colorsStyle';
 import NavAside from '../components/NavAside';
-import { useSportSeeData } from '../services/Hooks/useSportSeeData';
+import { useSportSeeData } from '../services/CustomHooks/useSportSeeData';
 
 function DashBoard() {
+  const { userId } = useParams();
+  console.log('params =', userId);
 
-  useSportSeeData();
+  useSportSeeData(`user/${ userId }`);
 
   return (
       <>
@@ -16,7 +19,7 @@ function DashBoard() {
 
           <SectionContent>
             <MainTitle>
-              Bonjour <SpanUserName>{ 'UserName' }</SpanUserName>
+              Bonjour <SpanUserName>{ '{ UserName }' }</SpanUserName>
             </MainTitle>
             <MessageUser>
               <span>Félicitation ! Vous avez explosé vos objectifs hier 👏</span>
