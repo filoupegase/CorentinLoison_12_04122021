@@ -10,7 +10,8 @@ ReactDOM.render(
       <GlobalStyle />
       <Router>
         <Routes>
-          <Route exact path="/" element={ <Navigate to="/dashboard/12" /> } />
+          <Route exact path="/" element={ <Navigate to="/dashboard/18" /> } />
+          <Route exact path="*" element={ <Navigate to="/dashboard/18" /> } />
           <Route path="/dashboard/:userId" element={ <DashBoard /> } />
         </Routes>
       </Router>

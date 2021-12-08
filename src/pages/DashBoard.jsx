@@ -4,13 +4,29 @@ import styled from 'styled-components';
 import { themeColor } from '../utils/style/colorsStyle';
 import NavAside from '../components/NavAside';
 import { useSportSeeData } from '../services/CustomHooks/useSportSeeData';
+import PieChartTodayScore from '../components/PieChartTodayScore';
 
 function DashBoard() {
   const { userId } = useParams();
 
-  const { data } = useSportSeeData('firstName', `user/${ userId }`);
+  const { data, error } = useSportSeeData('firstName', `user/${ userId }`);
   const userName = data;
 
+  if (error) {
+    return (
+        <>
+          <Header />
+          <DashboardContainer>
+            <SectionContent>
+              <MainTitle>
+                Bonjour
+              </MainTitle>
+
+            </SectionContent>
+          </DashboardContainer>
+        </>
+    );
+  }
   return (
       <>
         <Header />
@@ -22,8 +38,10 @@ function DashBoard() {
               Bonjour <SpanUserName>{ userName.toString() }</SpanUserName>
             </MainTitle>
             <MessageUser>
-              <span>Félicitation ! Vous avez explosé vos objectifs hier 👏</span>
+              <span>Félicitation { userName.toString() } ! Vous avez explosé vos objectifs hier 👏</span>
             </MessageUser>
+
+            <PieChartTodayScore userId={ userId } />
 
           </SectionContent>
         </DashboardContainer>

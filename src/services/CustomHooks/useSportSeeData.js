@@ -14,14 +14,18 @@ const DEFAULT_URL = 'http://localhost:8000';
  */
 export function useSportSeeData(service, userId) {
   const [data, setData] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(false);
+
   const endpoint = endPointService(service, userId);
 
   useEffect(() => {
 
+    setIsLoading(true);
+
     async function fetchData() {
       try {
         const url = `${ DEFAULT_URL }/${ endpoint }`;
-        console.log(url);
         const response = await fetch(url, {
           headers: {
             'Content-Type': 'application/json',
@@ -31,18 +35,19 @@ export function useSportSeeData(service, userId) {
 
         if (response.ok) {
           const data = await response.json();
-          console.log(data);
           const extractorData = extractDataService(data, service);
           setData(extractorData);
         }
       } catch (error) {
-        console.error(`An error occured while fetching : ${ error }`);
+        console.error(`${ error }`);
+        setError(true);
       } finally {
+        setIsLoading(false);
       }
     }
 
     fetchData();
   }, [service, userId, endpoint]);
 
-  return { data };
+  return { data, error, isLoading };
 }

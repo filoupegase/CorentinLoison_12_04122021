@@ -18,6 +18,8 @@ export function extractDataService(data, service) {
     switch (service) {
       case 'firstName':
         return getFirstName(data);
+      case 'today-score':
+        return getTodayScore(data);
       default:
         return null;
     }
@@ -35,21 +37,11 @@ function getFirstName(userData) {
 }
 
 /**
- * @param {array} userData
- * @returns {array} data for ActivitiesChart
+ * @param {(string|Object)} userData
+ * @returns data for ScoreChart Component
  */
-/*
-function getActivitiesData(userData) {
-  const activities = [];
+function getTodayScore(userData) {
 
-  if (userData) {
-    for (let item of userData) {
-      activities.push({
-        activity: ACTIVITY_BY_KIND[item.kind],
-        value: item.value
-      });
-    }
+  return userData === 'can not get user' ? 0 : userData.data.todayScore;
+}
 
-    return activities;
-  }
-}*/
