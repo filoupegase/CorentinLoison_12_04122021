@@ -9,7 +9,7 @@ const DEFAULT_URL = 'http://localhost:8000';
  * Hook used to extract data from useSportSeeData to fill the dashboard.
  * @param {string} service
  * @param {string} userId
- * @returns {undefined|Object}
+ * @returns {undefined || Object}
  */
 export function useSportSeeData(service, userId) {
   const [data, setData] = useState({});
@@ -21,7 +21,7 @@ export function useSportSeeData(service, userId) {
     async function fetchData() {
       try {
         const url = `${ DEFAULT_URL }/${ endpoint }`;
-        console.log('endpoint =', endpoint);
+        console.log('endpoint = ', endpoint);
 
         const response = await fetch(url, {
           headers: {
@@ -43,6 +43,6 @@ export function useSportSeeData(service, userId) {
     }
 
     fetchData();
-  }, [endpoint]);
+  }, [service, endpoint]);
   return { data };
 }

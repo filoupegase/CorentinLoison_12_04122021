@@ -7,9 +7,8 @@ import { useSportSeeData } from '../services/CustomHooks/useSportSeeData';
 
 function DashBoard() {
   const { userId } = useParams();
-  console.log('params =', userId);
 
-  useSportSeeData(`user/${ userId }`);
+  useSportSeeData(`user/${ userId }`, 'firstName');
 
   return (
       <>

@@ -1,3 +1,8 @@
+/**
+ * @param {string} service
+ * @param {string} userId
+ * @returns {string} match endpoint associated to the service and the user id
+ */
 export function endPointService(service, userId) {
   const ACTIVITIES_URL = `user/${ userId }/performance`;
   const AVERAGE_SESSIONS_URL = `user/${ userId }/average-sessions`;
