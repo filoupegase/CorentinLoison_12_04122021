@@ -2,13 +2,12 @@ import Header from '../components/Header';
 import styled from 'styled-components';
 import { themeColor } from '../utils/style/colorsStyle';
 import NavAside from '../components/NavAside';
-
-/*
-import PieChartObjectif from '../components/PieChartObjectif';
-*/
-
+import { useSportSeeData } from '../services/Hooks/useSportSeeData';
 
 function DashBoard() {
+
+  useSportSeeData();
+
   return (
       <>
         <Header />
