@@ -5,6 +5,7 @@ import { themeColor } from '../utils/style/colorsStyle';
 import NavAside from '../components/NavAside';
 import { useSportSeeData } from '../services/CustomHooks/useSportSeeData';
 import PieChartTodayScore from '../components/PieChartTodayScore';
+import BarChartDailyActivity from '../components/BarChartDailyActivity';
 
 function DashBoard() {
   const { userId } = useParams();
@@ -43,6 +44,9 @@ function DashBoard() {
 
             <GridContainer>
               <ChartsGridDiv>
+                <MainChart>
+                  <BarChartDailyActivity userId={ userId } />
+                </MainChart>
                 <PieChartTodayScore userId={ userId } />
               </ChartsGridDiv>
             </GridContainer>
@@ -102,6 +106,10 @@ const ChartsGridDiv = styled.div`
     border-radius: 5px;
     overflow: hidden;
   }`;
+
+const MainChart = styled.div`
+  grid-column: 1/4;
+`;
 
 export default DashBoard;
 

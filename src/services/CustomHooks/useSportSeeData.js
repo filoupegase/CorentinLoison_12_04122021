@@ -26,6 +26,7 @@ export function useSportSeeData(service, userId) {
     async function fetchData() {
       try {
         const url = `${ DEFAULT_URL }/${ endpoint }`;
+        console.log('Check endpoint =+=', url)
         const response = await fetch(url, {
           headers: {
             'Content-Type': 'application/json',

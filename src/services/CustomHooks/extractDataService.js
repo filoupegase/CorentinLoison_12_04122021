@@ -16,6 +16,8 @@ const ACTIVITY_BY_KIND = {
 export function extractDataService(data, service) {
   if (data) {
     switch (service) {
+      case 'daily-activity':
+        return getDailyActivity(data);
       case 'firstName':
         return getFirstName(data);
       case 'today-score':
@@ -24,6 +26,14 @@ export function extractDataService(data, service) {
         return null;
     }
   }
+}
+
+/**
+ * @param {Object} userData
+ * @returns {Object} of data for BarChartDailyActivity
+ */
+function getDailyActivity(userData) {
+  console.log(userData);
 }
 
 /**
@@ -41,7 +51,6 @@ function getFirstName(userData) {
  * @returns data for ScoreChart Component
  */
 function getTodayScore(userData) {
-
   return userData === 'can not get user' ? 0 : userData.data.todayScore;
 }
 
