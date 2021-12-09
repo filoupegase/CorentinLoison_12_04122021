@@ -40,7 +40,9 @@ function getDailyActivity(userData) {
     const dailyActivity = [];
 
     for (let item of pointerSession) {
-      const [mm, dd] = item.day.split('-');
+      // eslint-disable-next-line no-unused-vars
+      // I dont need year data
+      const [yyyy, mm, dd] = item.day.split('-');
 
       dailyActivity.push({
         day: `${ dd }/${ mm }`,
