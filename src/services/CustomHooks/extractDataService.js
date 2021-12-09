@@ -1,11 +1,11 @@
-const ACTIVITY_BY_KIND = {
+/*const ACTIVITY_BY_KIND = {
   1: 'cardio',
   2: 'energie',
   3: 'endurance',
   4: 'force',
   5: 'vitesse',
   6: 'intensité'
-};
+};*/
 
 /**
  * Factory appealing specialized functions to extract data for each service.
@@ -18,8 +18,10 @@ export function extractDataService(data, service) {
     switch (service) {
       case 'daily-activity':
         return getDailyActivity(data);
+
       case 'firstName':
         return getFirstName(data);
+
       case 'today-score':
         return getTodayScore(data);
       default:
@@ -33,7 +35,21 @@ export function extractDataService(data, service) {
  * @returns {Object} of data for BarChartDailyActivity
  */
 function getDailyActivity(userData) {
-  console.log(userData);
+  if (userData) {
+    const pointerSession = userData.data.sessions;
+    const dailyActivity = [];
+
+    for (let item of pointerSession) {
+      const [mm, dd] = item.day.split('-');
+
+      dailyActivity.push({
+        day: `${ dd }/${ mm }`,
+        kilogram: item.kilogram,
+        calories: item.calories
+      });
+    }
+    return dailyActivity;
+  }
 }
 
 /**
