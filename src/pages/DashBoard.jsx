@@ -9,7 +9,7 @@ import PieChartTodayScore from '../components/PieChartTodayScore';
 function DashBoard() {
   const { userId } = useParams();
 
-  const { data, error } = useSportSeeData('firstName', `user/${ userId }`);
+  const { data, error, isLoading } = useSportSeeData('firstName', `user/${ userId }`);
   const userName = data;
 
   if (error) {
@@ -35,7 +35,7 @@ function DashBoard() {
 
           <SectionContent>
             <MainTitle>
-              Bonjour <SpanUserName>{ userName.toString() }</SpanUserName>
+              Bonjour <SpanUserName>{ !isLoading && userName.toString() }</SpanUserName>
             </MainTitle>
             <MessageUser>
               <span>Félicitation { userName.toString() } ! Vous avez explosé vos objectifs hier 👏</span>

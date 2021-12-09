@@ -7,11 +7,11 @@ import { useSportSeeData } from '../../services/CustomHooks/useSportSeeData';
 
 
 const PieChartTodayScore = function ({ userId }) {
-  const { data, error } = useSportSeeData('today-score', `user/${ userId }`);
+  const { data, error, isLoading } = useSportSeeData('today-score', `user/${ userId }`);
 
   let score = data;
 
-  if (error) {
+  if (error || isLoading) {
     score = 0;
   }
 
