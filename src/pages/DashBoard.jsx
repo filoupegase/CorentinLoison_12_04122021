@@ -41,8 +41,11 @@ function DashBoard() {
               <span>Félicitation { userName.toString() } ! Vous avez explosé vos objectifs hier 👏</span>
             </MessageUser>
 
-            <PieChartTodayScore userId={ userId } />
-
+            <GridContainer>
+              <ChartsGridDiv>
+                <PieChartTodayScore userId={ userId } />
+              </ChartsGridDiv>
+            </GridContainer>
           </SectionContent>
         </DashboardContainer>
       </>
@@ -50,8 +53,8 @@ function DashBoard() {
 }
 
 const DashboardContainer = styled.main`
-display: grid;
-grid-template-columns: 7.5rem 1fr;
+  display: grid;
+  grid-template-columns: 7.5rem 1fr;
 `;
 
 const SectionContent = styled.section`
@@ -62,21 +65,43 @@ const SectionContent = styled.section`
 `;
 
 const MainTitle = styled.h1`
-margin: 0;
-font-size: 48px;
-font-weight: 500;
-@media (max-width: 1340px){
-font-size: 2.5rem}
+  margin: 0;
+  font-size: 48px;
+  font-weight: 500;
+  @media (max-width: 1340px){
+  font-size: 2.5rem}
 `;
 
 const SpanUserName = styled.span`
-color: ${ themeColor.primary };
+  color: ${ themeColor.primary };
 `;
 
 const MessageUser = styled.p`
   margin: 2rem 0 4rem 0;
   font-size: 18px;
 `;
+
+const GridContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  @media (max-width: 1340px) {
+    gap: 1rem;
+  }`;
+
+const ChartsGridDiv = styled.div`
+  grid-column: 1/4;
+  display: grid;
+  grid-template: 20rem 16rem / repeat(3, 1fr);
+  gap: 2rem;
+  @media (max-width: 1340px) {
+    grid-template: 18rem 14rem / repeat(3, 1fr);
+    gap: 1rem;
+  }
+  > * {
+    border-radius: 5px;
+    overflow: hidden;
+  }`;
 
 export default DashBoard;
 
