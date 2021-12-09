@@ -1,7 +1,7 @@
 export const themeColor = {
   primary: '#ff0101',
 
-  neutral100: '#fbfbfb',
+  neutral100: '#FBFBFB',
   neutral200: '#dedede',
   neutral400: '#9b9eac',
   neutral500: '#74798c',
