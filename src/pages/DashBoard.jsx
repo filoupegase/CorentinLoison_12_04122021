@@ -7,6 +7,7 @@ import { useSportSeeData } from '../services/CustomHooks/useSportSeeData';
 import PieChartTodayScore from '../components/PieChartTodayScore';
 import BarChartDailyActivity from '../components/BarChartDailyActivity';
 import ChartAverageSessions from '../components/ChartAverageSessions';
+import ActivitiesChart from '../components/ActivitiesChart';
 
 function DashBoard() {
   const { userId } = useParams();
@@ -51,6 +52,8 @@ function DashBoard() {
                 </MainChart>
 
                 <ChartAverageSessions userId={ userId } />
+
+                <ActivitiesChart userId={ userId } />
 
                 <PieChartTodayScore userId={ userId } />
               </ChartsGridDiv>

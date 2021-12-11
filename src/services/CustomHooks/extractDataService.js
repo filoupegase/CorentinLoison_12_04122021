@@ -1,3 +1,12 @@
+const DEFAULT_ACTIVITY = {
+  1: 'Cardio',
+  2: 'Energie',
+  3: 'Endurance',
+  4: 'Force',
+  5: 'Vitesse',
+  6: 'Intensité'
+};
+
 /**
  * Factory appealing specialized functions to extract data for each service.
  * @param {string|Object} data
@@ -13,6 +22,9 @@ export function extractDataService(data, service) {
       case 'average-sessions':
         return getAverageSessions(data.data.sessions);
 
+      case 'activities':
+        return getActivities(data.data.data);
+
       case 'firstName':
         return getFirstName(data);
 
@@ -25,10 +37,30 @@ export function extractDataService(data, service) {
   }
 }
 
+
+/**
+ * @param {array.Object} userData
+ * @returns {Object} data for ActivitiesChart
+ */
+function getActivities(userData) {
+  const activities = [];
+
+  if (userData) {
+    for (let item of userData) {
+      activities.push({
+        activity: DEFAULT_ACTIVITY[item.kind],
+        value: item.value
+      });
+    }
+    return activities;
+  }
+}
+
+
 /**
  * @returns {array.Object} default data for ChartAverageSessions
  */
-export function getDefaultAverageSessions() {
+function getDefaultAverageSessions() {
   const averageSessions = [
     {
       day: 'L',

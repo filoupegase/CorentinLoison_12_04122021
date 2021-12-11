@@ -16,7 +16,6 @@ const ChartAverageSessions = function ({ userId }) {
   const { data, error, isLoading } = useSportSeeData('average-sessions', userId);
 
   let averageSessions = data;
-  console.log(averageSessions);
 
   if (error || isLoading) {
     averageSessions = null;
