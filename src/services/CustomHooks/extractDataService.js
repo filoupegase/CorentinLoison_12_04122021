@@ -1,12 +1,3 @@
-/*const ACTIVITY_BY_KIND = {
-  1: 'cardio',
-  2: 'energie',
-  3: 'endurance',
-  4: 'force',
-  5: 'vitesse',
-  6: 'intensité'
-};*/
-
 /**
  * Factory appealing specialized functions to extract data for each service.
  * @param {string|Object} data
@@ -19,15 +10,71 @@ export function extractDataService(data, service) {
       case 'daily-activity':
         return getDailyActivity(data);
 
+      case 'average-sessions':
+        return getAverageSessions(data.data.sessions);
+
       case 'firstName':
         return getFirstName(data);
 
       case 'today-score':
         return getTodayScore(data);
+
       default:
         return null;
     }
   }
+}
+
+/**
+ * @returns {array.Object} default data for ChartAverageSessions
+ */
+export function getDefaultAverageSessions() {
+  const averageSessions = [
+    {
+      day: 'L',
+      sessionLength: 0
+    },
+    {
+      day: 'M',
+      sessionLength: 0
+    },
+    {
+      day: 'M',
+      sessionLength: 0
+    },
+    {
+      day: 'J',
+      sessionLength: 0
+    },
+    {
+      day: 'V',
+      sessionLength: 0
+    },
+    {
+      day: 'S',
+      sessionLength: 0
+    },
+    {
+      day: 'D',
+      sessionLength: 0
+    }
+  ];
+
+  return averageSessions;
+}
+
+
+/**
+ * @param {Object} userData
+ * @returns {Object} data for ChartAverageSessions
+ */
+function getAverageSessions(userData) {
+  let averageSessions = getDefaultAverageSessions();
+
+  for (let index in userData) {
+    averageSessions[index].sessionLength = userData[index].sessionLength;
+  }
+  return averageSessions;
 }
 
 /**
