@@ -8,6 +8,8 @@ import PieChartTodayScore from '../components/PieChartTodayScore';
 import BarChartDailyActivity from '../components/BarChartDailyActivity';
 import ChartAverageSessions from '../components/ChartAverageSessions';
 import ActivitiesChart from '../components/ActivitiesChart';
+import InfoUserDetail from '../components/InfoUserDetail';
+
 
 function DashBoard() {
   const { userId } = useParams();
@@ -57,6 +59,9 @@ function DashBoard() {
 
                 <PieChartTodayScore userId={ userId } />
               </ChartsGridDiv>
+
+              <InfoUserDetail userId={ userId } />
+
             </GridContainer>
           </SectionContent>
         </DashboardContainer>
@@ -85,21 +90,18 @@ const MainTitle = styled.h1`
 `;
 
 const SpanUserName = styled.span`
-  color: ${ themeColor.primary };
-`;
+  color: ${ themeColor.primary };`;
 
 const MessageUser = styled.p`
   margin: 2rem 0 4rem 0;
-  font-size: 18px;
-`;
+  font-size: 18px;`;
 
 const GridContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
   @media (max-width: 1340px) {
-    gap: 1rem;
-  }`;
+    gap: 1rem;}`;
 
 const ChartsGridDiv = styled.div`
   grid-column: 1/4;
@@ -112,12 +114,10 @@ const ChartsGridDiv = styled.div`
   }
   > * {
     border-radius: 5px;
-    overflow: hidden;
-  }`;
+    overflow: hidden;}`;
 
 const MainChart = styled.div`
-  grid-column: 1/4;
-`;
+  grid-column: 1/4;`;
 
 export default DashBoard;
 

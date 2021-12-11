@@ -7,6 +7,7 @@ export function endPointService(service, userId) {
   const ACTIVITIES_URL = `user/${ userId }/performance`;
   const AVERAGE_SESSIONS_URL = `user/${ userId }/average-sessions`;
   const DAILY_ACTIVITY_URL = `user/${ userId }/activity`;
+  const KEY_DATA = `user/${ userId }`;
   const USER_URL = `${ userId }`;
 
   switch (service) {
@@ -23,7 +24,7 @@ export function endPointService(service, userId) {
       return USER_URL;
 
     case 'key-data':
-      return USER_URL;
+      return KEY_DATA;
 
     case 'today-score':
       return USER_URL;

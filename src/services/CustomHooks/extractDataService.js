@@ -24,17 +24,26 @@ export function extractDataService(data, service) {
 
       case 'average-sessions':
         return getAverageSessions(data.data.sessions);
-        
+
       case 'firstName':
         return getFirstName(data);
 
       case 'today-score':
         return getTodayScore(data);
 
+      case 'key-data':
+        return getKeyData(data);
+
       default:
         return null;
     }
   }
+}
+
+function getKeyData(userData) {
+  return userData === 'can not get user'
+      ? null
+      : userData.data.keyData;
 }
 
 
