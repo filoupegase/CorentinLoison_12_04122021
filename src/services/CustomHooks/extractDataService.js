@@ -16,15 +16,15 @@ const DEFAULT_ACTIVITY = {
 export function extractDataService(data, service) {
   if (data) {
     switch (service) {
+      case 'activities':
+        return getActivities(data.data.data);
+
       case 'daily-activity':
         return getDailyActivity(data);
 
       case 'average-sessions':
         return getAverageSessions(data.data.sessions);
-
-      case 'activities':
-        return getActivities(data.data.data);
-
+        
       case 'firstName':
         return getFirstName(data);
 
