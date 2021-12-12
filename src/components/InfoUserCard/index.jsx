@@ -23,15 +23,32 @@ const UNIT_TYPE = {
 };
 
 const InfoUserCard = function ({ value, type }) {
+
+  /**
+   * @param {string} value
+   * @returns {string}
+   */
+  function putString(value) {
+    value = '' + value;
+    value = value.toString();
+
+    if (value.length < 4) {
+      return value;
+    }
+
+    return `${ putString(value.slice(0, -3)) },${ value.slice(-3) }`;
+  }
+
   return (
       <InfoUserCardContainer>
         <img src={ ICON_TYPE[type] } alt={ type } width="60" height="60" />
         <InfoUserCardData>
 
-          <InfoUserCardMeasure data-testid="card-measure">
-            { value !== 0
-                ? `${ value }${ UNIT_TYPE[type] }`
-                : '-' }
+          <InfoUserCardMeasure data-tesstid="card-measure">
+            {
+              value !== 0
+                  ? `${ putString(value) }${ UNIT_TYPE[type] }`
+                  : '-' }
           </InfoUserCardMeasure>
 
           <InfoUserCardType data-testid="card-type">{ type }</InfoUserCardType>
@@ -41,7 +58,8 @@ const InfoUserCard = function ({ value, type }) {
 };
 
 InfoUserCard.propTypes = {
-  value: PropTypes.number.isRequired
+  type: PropTypes.string.isRequired,
+  value: PropTypes.number
 };
 
 const InfoUserCardContainer = styled.div`

@@ -83,14 +83,12 @@ const ScoreChartTitle = styled.h2`
 const ScoreLabel = styled.p`
   position: absolute;
   font-size: 1rem;
-  text-align: center;
-`;
+  text-align: center;`;
 
 const ScoreValue = styled.span`
   font-size: 1.5rem;
   font-weight: 700;
   text-align: center;
-  margin-bottom: 5px;
-`;
+  margin-bottom: 5px;`;
 
 export default PieChartTodayScore;

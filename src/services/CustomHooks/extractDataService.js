@@ -40,12 +40,15 @@ export function extractDataService(data, service) {
   }
 }
 
+/**
+ * @param {array.Object} userData
+ * @returns {Object}
+ */
 function getKeyData(userData) {
   return userData === 'can not get user'
       ? null
       : userData.data.keyData;
 }
-
 
 /**
  * @param {array.Object} userData
@@ -64,7 +67,6 @@ function getActivities(userData) {
     return activities;
   }
 }
-
 
 /**
  * @returns {array.Object} default data for ChartAverageSessions
@@ -103,7 +105,6 @@ function getDefaultAverageSessions() {
 
   return averageSessions;
 }
-
 
 /**
  * @param {Object} userData

@@ -5,6 +5,7 @@ import DashBoard from './pages/DashBoard';
 import reportWebVitals from './reportWebVitals';
 import { GlobalStyle } from './utils/style/GlobalStyle';
 
+
 ReactDOM.render(
     <React.StrictMode>
       <GlobalStyle />

@@ -1,6 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 import { themeColor } from './colorsStyle';
 
+
 export const GlobalStyle = createGlobalStyle`
   *,
   *::before,

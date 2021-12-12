@@ -111,8 +111,7 @@ const ChartsGridDiv = styled.div`
   @media (max-width: 1340px) {
     grid-template: 18rem 14rem / repeat(3, 1fr);
     gap: 1rem;
-  }
-  > * {
+  } > * {
     border-radius: 5px;
     overflow: hidden;}`;
 
