@@ -9,10 +9,10 @@ import iconFat from '../../images/icon-fat.svg';
 
 
 const ICON_TYPE = {
-  Calories: 'iconCalorie',
-  Proteines: 'iconProteines',
-  Glucides: 'iconCarbs',
-  Lipides: 'iconFat'
+  Calories: iconCalorie,
+  Proteines: iconProteines,
+  Glucides: iconCarbs,
+  Lipides: iconFat
 };
 
 const UNIT_TYPE = {
@@ -34,7 +34,6 @@ const InfoUserCard = function ({ value, type }) {
                 : '-' }
           </InfoUserCardMeasure>
 
-
           <InfoUserCardType data-testid="card-type">{ type }</InfoUserCardType>
         </InfoUserCardData>
       </InfoUserCardContainer>
@@ -42,7 +41,6 @@ const InfoUserCard = function ({ value, type }) {
 };
 
 InfoUserCard.propTypes = {
-  type: PropTypes.string.isRequired,
   value: PropTypes.number.isRequired
 };
 

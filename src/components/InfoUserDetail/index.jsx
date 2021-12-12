@@ -6,20 +6,16 @@ import InfoUserCard from '../InfoUserCard';
 
 
 const InfoUserDetail = function ({ userId }) {
-  const { data, error, isLoading } = useSportSeeData('key-data', userId);
+  const { data } = useSportSeeData('key-data', userId);
 
   let keyData = data;
-  console.log(keyData.calorieCount);
-
-  /*  if (error || isLoading) {
-      keyData = null;
-    }*/
-
-  console.log(error, isLoading);
 
   return (
       <CardsGrid>
-        <InfoUserCard type="Proteines" value={ keyData.calorieCount } />
+        <InfoUserCard type="Calories" value={ keyData.calorieCount } />
+        <InfoUserCard type="Proteines" value={ keyData.proteinCount } />
+        <InfoUserCard type="Glucides" value={ keyData.carbohydrateCount } />
+        <InfoUserCard type="Lipides" value={ keyData.lipidCount } />
       </CardsGrid>
   );
 };

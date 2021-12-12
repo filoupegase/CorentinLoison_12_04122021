@@ -67,8 +67,7 @@ const ScoreChartContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: ${ themeColor.neutral100 };
-`;
+  background: ${ themeColor.neutral100 };`;
 
 const ScoreChartTitle = styled.h2`
   position: absolute;
@@ -79,9 +78,7 @@ const ScoreChartTitle = styled.h2`
   font-weight: 500;
   @media (max-width: 1340px) {
     top: 1rem;
-    left: 1rem;
-  }
-`;
+    left: 1rem;}`;
 
 const ScoreLabel = styled.p`
   position: absolute;
