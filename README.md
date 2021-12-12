@@ -1,6 +1,9 @@
-# Getting Started with Create React DashBoard
+# SportSee
 
 This project was bootstrapped with [Create React DashBoard](https://github.com/facebook/create-react-app).
+
+
+
 
 ## Available Scripts
 
