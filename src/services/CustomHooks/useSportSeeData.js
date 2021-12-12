@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { endPointService } from './endPointService';
 import { extractDataService } from './extractDataService';
 
+
 const DEFAULT_URL = 'http://localhost:8000';
 
 /**
@@ -21,7 +22,6 @@ export function useSportSeeData(service, userId) {
     async function fetchData() {
       try {
         const url = `${ DEFAULT_URL }/${ endpoint }`;
-        console.log(url);
         const response = await fetch(url, {
           headers: {
             'Content-Type': 'application/json',

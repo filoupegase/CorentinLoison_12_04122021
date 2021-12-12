@@ -10,12 +10,6 @@ export function endPointService(service, userId) {
     case 'firstName':
       return USER_URL;
 
-    case 'key-data':
-      return USER_URL;
-
-    case 'today-score':
-      return USER_URL;
-
     default:
       return null;
   }
