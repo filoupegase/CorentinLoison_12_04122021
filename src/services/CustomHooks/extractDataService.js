@@ -25,7 +25,7 @@ export function extractDataService(data, service) {
       case 'average-sessions':
         return getAverageSessions(data.data.sessions);
 
-      case 'firstName':
+      case 'getUserName':
         return getFirstName(data);
 
       case 'today-score':

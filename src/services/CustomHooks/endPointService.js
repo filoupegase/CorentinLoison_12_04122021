@@ -20,7 +20,7 @@ export function endPointService(service, userId) {
     case 'daily-activity':
       return DAILY_ACTIVITY_URL;
 
-    case 'firstName':
+    case 'getUserName':
       return USER_URL;
 
     case 'key-data':

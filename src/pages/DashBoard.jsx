@@ -14,7 +14,7 @@ import InfoUserDetail from '../components/InfoUserDetail';
 function DashBoard() {
   const { userId } = useParams();
 
-  const { data, error, isLoading } = useSportSeeData('firstName', `user/${ userId }`);
+  const { data, error, isLoading } = useSportSeeData('getUserName', `user/${ userId }`);
   const userName = data;
 
   if (error) {
