@@ -11,6 +11,9 @@ export function endPointService(service, userId) {
   const USER_URL = `${ userId }`;
 
   switch (service) {
+    case 'getUserName':
+      return USER_URL;
+
     case 'activities':
       return ACTIVITIES_URL;
 
@@ -19,9 +22,6 @@ export function endPointService(service, userId) {
 
     case 'daily-activity':
       return DAILY_ACTIVITY_URL;
-
-    case 'getUserName':
-      return USER_URL;
 
     case 'key-data':
       return KEY_DATA;
