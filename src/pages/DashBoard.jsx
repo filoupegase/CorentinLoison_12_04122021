@@ -12,7 +12,11 @@ import InfoUserDetail from '../components/InfoUserDetail';
 
 
 function DashBoard() {
-  const { userId } = useParams();
+  let { userId } = useParams();
+
+  if (userId !== '12' || userId !== '18') {
+    userId = '12';
+  }
 
   const { data, error, isLoading } = useSportSeeData('getUserName', `user/${ userId }`);
   const userName = data;

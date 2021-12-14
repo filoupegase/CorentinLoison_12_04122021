@@ -1,7 +1,9 @@
 /**
+ * endPointService
+ * match endpoint associated to the service and the user id
  * @param {string} service
  * @param {string} userId
- * @returns {string|null} match endpoint associated to the service and the user id
+ * @returns {string|null}
  */
 export function endPointService(service, userId) {
   const ACTIVITIES_URL = `user/${ userId }/performance`;

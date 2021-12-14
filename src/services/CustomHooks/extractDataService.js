@@ -8,6 +8,7 @@ const DEFAULT_ACTIVITY = {
 };
 
 /**
+ * extractDataService
  * Factory appealing specialized functions to extract data for each service.
  * @param {string|Object} data
  * @param {string} service
@@ -41,6 +42,8 @@ export function extractDataService(data, service) {
 }
 
 /**
+ * get the userDate and return the whrite Object
+ * path to get all the keyData
  * @param {array.Object} userData
  * @returns {Object}
  */
@@ -51,6 +54,9 @@ function getKeyData(userData) {
 }
 
 /**
+ * get the userData, create an Array,
+ * iterate on the Object each el
+ * activity, value and return an array
  * @param {array.Object} userData
  * @returns {Object} data for ActivitiesChart
  */
@@ -69,6 +75,7 @@ function getActivities(userData) {
 }
 
 /**
+ * get DefaultAverageSessions for the getAverageSessions func
  * @returns {array.Object} default data for ChartAverageSessions
  */
 function getDefaultAverageSessions() {
@@ -107,6 +114,9 @@ function getDefaultAverageSessions() {
 }
 
 /**
+ * get the DefaultAverageSessions,
+ * i [averageSessions] to [userData]
+ * for get the right data from Api
  * @param {Object} userData
  * @returns {Object} data for ChartAverageSessions
  */
@@ -120,6 +130,8 @@ function getAverageSessions(userData) {
 }
 
 /**
+ * get data from daily activity url
+ * supress '-' and remove year data
  * @param {Object} userData
  * @returns {Object} of data for BarChartDailyActivity
  */
@@ -144,6 +156,7 @@ function getDailyActivity(userData) {
 }
 
 /**
+ * get the user name data from user/:userId url
  * @param {string} userData
  * @returns {string} user first name
  */
@@ -154,6 +167,7 @@ function getFirstName(userData) {
 }
 
 /**
+ * get the today Score data from user/:userId url
  * @param {(string|Object)} userData
  * @returns data for ScoreChart Component
  */
